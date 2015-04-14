@@ -15,15 +15,19 @@ bool executeSteps(DLLExecution * executor);
 
 int main(int argc, char * argv[]) {
 
-	ImageFactory::setImplementation(ImageFactory::DEFAULT);
+	ImageFactory::setImplementation(ImageFactory::STUDENT);
 	//ImageFactory::setImplementation(ImageFactory::STUDENT);
 
 
 	ImageIO::debugFolder = "D:\\Users\\Rolf\\Downloads\\FaceMinMin";
 	ImageIO::isInDebugMode = true; //If set to false the ImageIO class will skip any image save function calls
 
-
-
+	RGBImage * test = ImageFactory::newRGBImage();
+	test->set(10, 10);
+	std::cout << "w:" << test->getWidth() << " h:" << test->getHeight() <<std::endl;
+	test->setPixel(2, 4, RGB{255, 0, 0 });
+	//std::cout << test->getPixel(2, 4).r << std::endl;
+	
 
 	RGBImage * input = ImageFactory::newRGBImage();
 	if (!ImageIO::loadImage("D:\\Users\\Rolf\\Downloads\\TestA5.jpg", *input)) {
