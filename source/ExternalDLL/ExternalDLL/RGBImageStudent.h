@@ -27,5 +27,9 @@ public:
 
 private:
 	std::vector<RGB> pixelStorage;
+	struct ImageSize{
+		int x = 0;
+		int y = 0;
+	} imageSize;
 
 };

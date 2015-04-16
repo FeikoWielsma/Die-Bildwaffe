@@ -11,35 +11,43 @@ RGBImageStudent::RGBImageStudent(const RGBImageStudent &other) : RGBImage(other.
 
 
 RGBImageStudent::RGBImageStudent(const int width, const int height) : RGBImage(width, height) {
-	std::cout << "Widthheight constructor";
+	std::cout << "Normaal constructor";
+	//set(width, height);
 }
 
 RGBImageStudent::~RGBImageStudent() {
 }
 
 void RGBImageStudent::set(const int width, const int height) {
+	pixelStorage.clear();
+	pixelStorage.resize(width * height);
+	imageSize.x = width;
+	imageSize.y = height;
 }
 
 void RGBImageStudent::set(const RGBImageStudent &other) {
-	set(other.getWidth(), other.getHeight());
+	//set(other.getWidth(), other.getHeight());
 }
 
 void RGBImageStudent::setPixel(int x, int y, RGB pixel) {
-	setPixel(y*getWidth() + x, pixel);
+	setPixel(y * getWidth() + x, pixel);
 }
 
 void RGBImageStudent::setPixel(int i, RGB pixel) {
-
-	pixelStorage[i] = pixel;
+	if (i < imageSize.x * imageSize.y){
+		pixelStorage[i] = pixel; //hier doet ie poepie over... kan [i] niet ofso...?
+	}
 }
 
 RGB RGBImageStudent::getPixel(int x, int y) const {
-	return pixelStorage[x][y];
+	return getPixel(y * getWidth() + x);
 }
 
 RGB RGBImageStudent::getPixel(int i) const {
-	int x = i / getWidth();
-	int y = i % getWidth();
-
-	return pixelStorage[x][y];	
+	try{
+		return pixelStorage.at(i);
+	}
+	catch (std::out_of_range){
+		return RGB();
+	}
 }
