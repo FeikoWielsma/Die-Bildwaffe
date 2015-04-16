@@ -24,9 +24,8 @@ public:
 	RGB getPixel(int x, int y) const;
 	RGB getPixel(int i) const;
 
-	std::vector<std::vector<RGB>> pixelStorage;
 
-
-
+private:
+	std::vector<RGB> pixelStorage;
 
 };

@@ -7,34 +7,17 @@ RGBImageStudent::RGBImageStudent() : RGBImage() {
 
 RGBImageStudent::RGBImageStudent(const RGBImageStudent &other) : RGBImage(other.getWidth(), other.getHeight()) {
 	std::cout << "Copy constructor";
-	set(other);
-
-	for (int x = 0 ; x < other.getWidth(); x++)
-	{
-		for (int y = 0; y < other.getHeight(); y++)
-		{
-			setPixel(x, y, other.getPixel(x, y));
-		}
-	}
 }
 
 
 RGBImageStudent::RGBImageStudent(const int width, const int height) : RGBImage(width, height) {
 	std::cout << "Widthheight constructor";
-	set(width, height);
 }
 
 RGBImageStudent::~RGBImageStudent() {
 }
 
 void RGBImageStudent::set(const int width, const int height) {
-	RGBImage::set(width, height);
-
-	pixelStorage.resize(width);
-	for (auto& x : pixelStorage)
-	{
-		x.resize(height);
-	}
 }
 
 void RGBImageStudent::set(const RGBImageStudent &other) {
@@ -42,15 +25,12 @@ void RGBImageStudent::set(const RGBImageStudent &other) {
 }
 
 void RGBImageStudent::setPixel(int x, int y, RGB pixel) {
-	pixelStorage[x][y] = pixel;
+	setPixel(y*getWidth() + x, pixel);
 }
 
 void RGBImageStudent::setPixel(int i, RGB pixel) {
 
-	int x = i / getWidth();
-	int y = i % getWidth();
-
-	pixelStorage[x][y] = pixel;
+	pixelStorage[i] = pixel;
 }
 
 RGB RGBImageStudent::getPixel(int x, int y) const {
