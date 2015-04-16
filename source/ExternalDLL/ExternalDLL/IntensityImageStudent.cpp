@@ -4,6 +4,15 @@ IntensityImageStudent::IntensityImageStudent() : IntensityImage() {
 
 }
 
+
+IntensityImageStudent::IntensityImageStudent(const RGBImage &RGBImage) : IntensityImage(RGBImage.getWidth(), RGBImage.getHeight()){
+	set(RGBImage.getWidth(), RGBImage.getHeight() );
+	for (int i = 0; i < RGBImage.getWidth() * RGBImage.getHeight(); ++i){
+		Intensity in = Intensity( (RGBImage.getPixel(i).r + RGBImage.getPixel(i).g + RGBImage.getPixel(i).b) / 3 );
+		setPixel(i, in);
+	}
+}
+
 IntensityImageStudent::IntensityImageStudent(const IntensityImageStudent &other) : IntensityImage(other.getWidth(), other.getHeight()) {
 	
 }
