@@ -2,36 +2,26 @@
 #include <iostream>
 
 RGBImageStudent::RGBImageStudent() : RGBImage() {
+	std::cout << "Default constructor";
 }
 
 RGBImageStudent::RGBImageStudent(const RGBImageStudent &other) : RGBImage(other.getWidth(), other.getHeight()) {
-	//int throwError = 0, e = 1 / throwError;
+	std::cout << "Copy constructor";
+	set(other);
 
-	pixelStorage = std::vector < std::vector<RGB> > {};
-
-	for (int x = 0; x < other.getWidth(); ++x)
+	for (int x = 0 ; x < other.getWidth(); x++)
 	{
-		for (int y = 0; y < other.getHeight(); ++y)
+		for (int y = 0; y < other.getHeight(); y++)
 		{
-			pixelStorage[x][y] = other.getPixel(x,y);
+			setPixel(x, y, other.getPixel(x, y));
 		}
 	}
 }
 
 
 RGBImageStudent::RGBImageStudent(const int width, const int height) : RGBImage(width, height) {
-	std::cout << "Running for loop: w: " << width << " h: " << height << std::endl;
-	for (int x = 0; x < width; ++x)
-	{
-		pixelStorage.push_back(std::vector < RGB > {});
-		std::cout << "currsize: " << pixelStorage.size() << std::endl;
-		for (int y = 0; y < height; ++y)
-		{
-			pixelStorage[x].push_back(RGB{});
-			std::cout << "currsize: " << pixelStorage[x].size() << std::endl;
-		}
-	}
-
+	std::cout << "Widthheight constructor";
+	set(width, height);
 }
 
 RGBImageStudent::~RGBImageStudent() {
@@ -39,21 +29,20 @@ RGBImageStudent::~RGBImageStudent() {
 
 void RGBImageStudent::set(const int width, const int height) {
 	RGBImage::set(width, height);
-	//Delete old storage
-	pixelStorage = std::vector < std::vector<RGB> > {};
-	//Initialize new storage
-	RGBImageStudent(width, height);
+
+	pixelStorage.resize(width);
+	for (auto& x : pixelStorage)
+	{
+		x.resize(height);
+	}
 }
 
 void RGBImageStudent::set(const RGBImageStudent &other) {
-	RGBImage::set(other.getWidth(), other.getHeight());
-	pixelStorage = std::vector < std::vector<RGB> > {};
-	RGBImageStudent(other.getWidth(), other.getHeight());
+	set(other.getWidth(), other.getHeight());
 }
 
 void RGBImageStudent::setPixel(int x, int y, RGB pixel) {
-	std::cout << "size: " << pixelStorage.size() <<std::endl;
-	//pixelStorage[x][y] = pixel;
+	pixelStorage[x][y] = pixel;
 }
 
 void RGBImageStudent::setPixel(int i, RGB pixel) {
@@ -72,5 +61,5 @@ RGB RGBImageStudent::getPixel(int i) const {
 	int x = i / getWidth();
 	int y = i % getWidth();
 
-	return pixelStorage[x][y];	return 0;
+	return pixelStorage[x][y];	
 }

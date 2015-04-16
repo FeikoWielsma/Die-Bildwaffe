@@ -22,15 +22,19 @@ int main(int argc, char * argv[]) {
 	ImageIO::debugFolder = "D:\\Users\\Rolf\\Downloads\\FaceMinMin";
 	ImageIO::isInDebugMode = true; //If set to false the ImageIO class will skip any image save function calls
 
+
 	RGBImage * test = ImageFactory::newRGBImage();
 	test->set(10, 10);
 	std::cout << "w:" << test->getWidth() << " h:" << test->getHeight() <<std::endl;
 	test->setPixel(2, 4, RGB{255, 0, 0 });
-	//std::cout << test->getPixel(2, 4).r << std::endl;
-	
+	std::cout << (int)test->getPixel(2, 4).r << std::endl;
+
+	test->setPixel(1, RGB{ 0, 255, 0 });
+	std::cout << (int)test->getPixel(1).g << std::endl;
+		
 
 	RGBImage * input = ImageFactory::newRGBImage();
-	if (!ImageIO::loadImage("D:\\Users\\Rolf\\Downloads\\TestA5.jpg", *input)) {
+	if (!ImageIO::loadImage("C:\\Users\\Feiko\\Documents\\GitHub\\HU-Vision-1415\\testsets\\Set A\\TestSet Images\\child-1.png", *input)) {
 		std::cout << "Image could not be loaded!" << std::endl;
 		system("pause");
 		return 0;
