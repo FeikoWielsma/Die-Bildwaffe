@@ -11,7 +11,6 @@
 class IntensityImageStudent : public IntensityImage {
 public:
 	IntensityImageStudent();
-	IntensityImageStudent(const RGBImage &RGBImage);
 	IntensityImageStudent(const IntensityImageStudent &other);
 	IntensityImageStudent(const int width, const int height);
 	~IntensityImageStudent();

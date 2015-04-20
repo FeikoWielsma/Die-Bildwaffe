@@ -114,6 +114,9 @@
     <ClInclude Include="SonnetXVIII.h">
       <Filter>Header Files\private\disableautocomplete</Filter>
     </ClInclude>
+    <ClInclude Include="IntensityConvertor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Image.cpp">
@@ -190,6 +193,9 @@
     </ClCompile>
     <ClCompile Include="SonnetXVIII.cpp">
       <Filter>Source Files\private\disableautocomplete</Filter>
+    </ClCompile>
+    <ClCompile Include="IntensityConvertor.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

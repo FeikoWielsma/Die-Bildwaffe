@@ -1,9 +1,13 @@
 #include "StudentPreProcessing.h"
 #include "IntensityImageStudent.h"
+#include "IntensityConvertor.h"
 
 
 IntensityImage * StudentPreProcessing::stepToIntensityImage(const RGBImage &image) const {
-	return new IntensityImageStudent(image); //wordt nog niet van de heap weg gehaald!!!
+	IntensityImage * intensityImage = new IntensityImageStudent();
+	IntensityConvertor intensityConversion;
+	intensityConversion.doAlgorithm( image, *intensityImage );
+	return intensityImage;
 }
 
 IntensityImage * StudentPreProcessing::stepScaleImage(const IntensityImage &image) const {
