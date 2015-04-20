@@ -114,7 +114,13 @@
     <ClInclude Include="SonnetXVIII.h">
       <Filter>Header Files\private\disableautocomplete</Filter>
     </ClInclude>
-    <ClInclude Include="IntensityConvertor.h">
+    <ClInclude Include="StudentIntensityConvertor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentHistogram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StudentHistogramCreator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -194,7 +200,13 @@
     <ClCompile Include="SonnetXVIII.cpp">
       <Filter>Source Files\private\disableautocomplete</Filter>
     </ClCompile>
-    <ClCompile Include="IntensityConvertor.cpp">
+    <ClCompile Include="StudentIntensityConvertor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentHistogram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentHistogramCreator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

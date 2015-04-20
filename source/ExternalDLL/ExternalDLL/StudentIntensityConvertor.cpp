@@ -1,7 +1,7 @@
-#include "IntensityConvertor.h"
+#include "StudentIntensityConvertor.h"
 
 
-void IntensityConvertor::doAlgorithm(const RGBImage& input, IntensityImage& dst)
+void StudentIntensityConvertor::doAlgorithm(const RGBImage& input, IntensityImage& dst)
 {
 	dst.set(input.getWidth(), input.getHeight());
 

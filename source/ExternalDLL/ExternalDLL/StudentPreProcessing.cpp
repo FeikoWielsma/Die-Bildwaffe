@@ -1,12 +1,21 @@
 #include "StudentPreProcessing.h"
 #include "IntensityImageStudent.h"
-#include "IntensityConvertor.h"
+#include "StudentIntensityConvertor.h"
+#include "StudentHistogram.h"
+#include "StudentHistogramCreator.h"
+#include <iostream>
 
 
 IntensityImage * StudentPreProcessing::stepToIntensityImage(const RGBImage &image) const {
 	IntensityImage * intensityImage = new IntensityImageStudent();
-	IntensityConvertor intensityConversion;
+	StudentIntensityConvertor intensityConversion;
 	intensityConversion.doAlgorithm( image, *intensityImage );
+
+	StudentHistogram histogram;
+	StudentHistogramCreator histogramCreator;
+	histogramCreator.doAlgorithm(*intensityImage, histogram);
+	histogram.outputFile();
+	std::cout << "test\n";
 	return intensityImage;
 }
 
