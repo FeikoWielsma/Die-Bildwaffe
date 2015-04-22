@@ -23,14 +23,14 @@ namespace FaceRecognitionGUI {
 
 
        
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                 EntryPoint = "getDLLExecutionTask",
                 ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr getDLLExecutionTask(IntPtr image);
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                 EntryPoint = "freeDLLExecutionTask",
                 ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
@@ -38,7 +38,7 @@ namespace FaceRecognitionGUI {
 
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
             EntryPoint = "setImageImplementation",
             ExactSpelling = false,
             CallingConvention = CallingConvention.Cdecl)]
@@ -48,7 +48,7 @@ namespace FaceRecognitionGUI {
 
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                 EntryPoint = "executePreProcessingStep1",
                 ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
@@ -56,7 +56,7 @@ namespace FaceRecognitionGUI {
         public static extern bool executePreProcessingStep1(IntPtr task, [MarshalAs(UnmanagedType.I1)] bool student);
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                 EntryPoint = "executePreProcessingStep2",
                 ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
@@ -65,7 +65,7 @@ namespace FaceRecognitionGUI {
 
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                 EntryPoint = "executePreProcessingStep3",
                 ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
@@ -75,7 +75,7 @@ namespace FaceRecognitionGUI {
 
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                 EntryPoint = "executePreProcessingStep4",
                 ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
@@ -86,25 +86,25 @@ namespace FaceRecognitionGUI {
 
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
              EntryPoint = "getResultPreProcessingStep1",
              ExactSpelling = false,
              CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr getResultPreProcessingStep1(IntPtr task);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
              EntryPoint = "getResultPreProcessingStep2",
              ExactSpelling = false,
              CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr getResultPreProcessingStep2(IntPtr task);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
              EntryPoint = "getResultPreProcessingStep3",
              ExactSpelling = false,
              CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr getResultPreProcessingStep3(IntPtr task);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
              EntryPoint = "getResultPreProcessingStep4",
              ExactSpelling = false,
              CallingConvention = CallingConvention.Cdecl)]
@@ -118,7 +118,7 @@ namespace FaceRecognitionGUI {
 
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
               EntryPoint = "prepareLocalization",
               ExactSpelling = false,
               CallingConvention = CallingConvention.Cdecl)]
@@ -128,35 +128,35 @@ namespace FaceRecognitionGUI {
 
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                EntryPoint = "executeLocalizationStep1",
                ExactSpelling = false,
                CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool executeLocalizationStep1(IntPtr task, [MarshalAs(UnmanagedType.I1)] bool student);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                EntryPoint = "executeLocalizationStep2",
                ExactSpelling = false,
                CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool executeLocalizationStep2(IntPtr task, [MarshalAs(UnmanagedType.I1)] bool student);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                EntryPoint = "executeLocalizationStep3",
                ExactSpelling = false,
                CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool executeLocalizationStep3(IntPtr task, [MarshalAs(UnmanagedType.I1)] bool student);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                EntryPoint = "executeLocalizationStep4",
                ExactSpelling = false,
                CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool executeLocalizationStep4(IntPtr task, [MarshalAs(UnmanagedType.I1)] bool student);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                EntryPoint = "executeLocalizationStep5",
                ExactSpelling = false,
                CallingConvention = CallingConvention.Cdecl)]
@@ -164,7 +164,7 @@ namespace FaceRecognitionGUI {
         public static extern bool executeLocalizationStep5(IntPtr task, [MarshalAs(UnmanagedType.I1)] bool student);
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
              EntryPoint = "getLocalizationDebugImage",
              ExactSpelling = false,
              CallingConvention = CallingConvention.Cdecl)]
@@ -183,35 +183,35 @@ namespace FaceRecognitionGUI {
 
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
              EntryPoint = "prepareExtraction",
              ExactSpelling = false,
              CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool prepareExtraction(IntPtr task);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
             EntryPoint = "executeExtractionStep1",
             ExactSpelling = false,
             CallingConvention = CallingConvention.Cdecl)]
         [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool executeExtractionStep1(IntPtr task, [MarshalAs(UnmanagedType.I1)] bool student);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                EntryPoint = "executeExtractionStep2",
                ExactSpelling = false,
                CallingConvention = CallingConvention.Cdecl)]
                [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool executeExtractionStep2(IntPtr task, [MarshalAs(UnmanagedType.I1)] bool student);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                EntryPoint = "executeExtractionStep3",
                ExactSpelling = false,
                CallingConvention = CallingConvention.Cdecl)]
                [return: MarshalAs(UnmanagedType.I1)]
         public static extern bool executeExtractionStep3(IntPtr task, [MarshalAs(UnmanagedType.I1)] bool student);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
              EntryPoint = "getExtractionDebugImage",
              ExactSpelling = false,
              CallingConvention = CallingConvention.Cdecl)]
@@ -224,7 +224,7 @@ namespace FaceRecognitionGUI {
 
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                EntryPoint = "executePostProcessing",
                ExactSpelling = false,
                CallingConvention = CallingConvention.Cdecl)]
@@ -232,7 +232,7 @@ namespace FaceRecognitionGUI {
         public static extern bool executePostProcessing(IntPtr task);
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                EntryPoint = "executeRepresentation",
                ExactSpelling = false,
                CallingConvention = CallingConvention.Cdecl)]
@@ -241,7 +241,7 @@ namespace FaceRecognitionGUI {
 
 
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                EntryPoint = "getFacialParameters",
                ExactSpelling = false,
                CallingConvention = CallingConvention.Cdecl)]
@@ -265,7 +265,7 @@ namespace FaceRecognitionGUI {
 
 
         //Dll method whichs creates a new image on the C++ side and returns a pointer to it
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                 EntryPoint = "getRGBImageFromData",
                 ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
@@ -277,7 +277,7 @@ namespace FaceRecognitionGUI {
 
 
         //Dll method whichs gets the version of the dll
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                  EntryPoint = "getVersion",
                  ExactSpelling = false,
                  CallingConvention = CallingConvention.Cdecl)]
@@ -290,25 +290,25 @@ namespace FaceRecognitionGUI {
          * Image methods
          */
         //Dll method whichs creates a new image on the C++ side and returns a pointer to it
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                 EntryPoint = "imageNewRGB",
                 ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr imageNewRGB(int width, int height);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                 EntryPoint = "imageFreeRGB",
                 ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
         public static extern void imageFreeRGB(IntPtr image);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                 EntryPoint = "imageWidth",
                 ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
         public static extern int imageWidth(IntPtr image);
 
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
                 EntryPoint = "imageHeight",
                 ExactSpelling = false,
                 CallingConvention = CallingConvention.Cdecl)]
@@ -319,7 +319,7 @@ namespace FaceRecognitionGUI {
 
 
         //Dll method whichs gets the pixels from a native c++ created image
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
             EntryPoint = "getImageBytes",
             ExactSpelling = false,
             CallingConvention = CallingConvention.Cdecl)]
@@ -327,7 +327,7 @@ namespace FaceRecognitionGUI {
 
 
         //Method whichs opens a file in a native OpenCV window
-        [DllImport("ExternalDll.dll",
+        [DllImport("../../../../ExternalDll/Debug/ExternalDLL.dll",
             EntryPoint = "openImageWithOpenCV",
             ExactSpelling = false,
             CallingConvention = CallingConvention.Cdecl)]
