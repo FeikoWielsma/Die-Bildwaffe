@@ -1,5 +1,6 @@
 #include "StudentLocalization.h"
 #include "IntensityImageStudent.h"
+#include <vector>
 
 bool StudentLocalization::stepFindHead(const IntensityImage &image, FeatureMap &features) const {
 	return false;
@@ -15,19 +16,56 @@ bool StudentLocalization::stepFindNoseMouthAndChin(const IntensityImage &image, 
 	std::cout << "middle: " << top.getX() << std::endl;
 	std::cout << "top head: " << top.getY() << std::endl;
 
-	IntensityImageStudent sample{ 2, image.getHeight() - static_cast<int>(top.getY()) };
+	IntensityImageStudent sample{ sampleWidth, image.getHeight() - static_cast<int>(top.getY()) };
 
 	for (int y = 0; y < sample.getHeight(); ++y){
-		std::cout << y << ": ";
-		for (int x = 0; x < 2; ++x){
-			sample.setPixel(x, y, image.getPixel(static_cast<int>(top.getX()) + (2 / 2) - x, static_cast<int>(top.getY()) + y));
-			std::cout << static_cast<int>(sample.getPixel(x, y));
-			std::cout << ' ';
+		for (int x = 0; x < sampleWidth; ++x){
+			sample.setPixel(x, y, image.getPixel(static_cast<int>(top.getX()) + (sampleWidth / 2) - x, static_cast<int>(top.getY()) + y));
 		}
-		std::cout << std::endl;
 	}
 
-	return false;
+	std::vector<int> POI;
+
+	for (int y = 0; y < sample.getHeight(); ++y){
+		bool line = true;
+		for (int x = 0; x < sample.getWidth(); ++x){
+			if (sample.getPixel(x, y) == Intensity(255)){
+				line = false;
+			}
+		}
+		if (line && y > topOffset){
+			int lastNumber = 0;
+			try{
+				lastNumber = POI.at(POI.size() - 1);
+			}
+			catch (std::exception){}
+
+			if (y - lastNumber > 3){
+				POI.push_back(y);
+			}
+		}
+	}
+
+	for (const auto & p : POI){
+		std::cout << p << std::endl;
+	}
+
+	if (POI.size() < 3){
+		return false;
+	}
+	else{
+		Feature nose{ Feature::FEATURE_NOSE_BOTTOM, Point2D < double > {top.getX(), top.getY() + POI.at(0)} };
+		Feature mouth{ Feature::FEATURE_MOUTH_TOP, Point2D < double > {top.getX(), top.getY() + POI.at(1)} };
+		Feature mouthM{ Feature::FEATURE_MOUTH_CENTER, Point2D < double > {top.getX(), top.getY() + POI.at(1)+4} };
+		Feature mouthB{ Feature::FEATURE_MOUTH_BOTTOM, Point2D < double > {top.getX(), top.getY() + POI.at(1)+8} };
+		Feature chin{ Feature::FEATURE_CHIN, Point2D < double > {top.getX(), top.getY() + POI.at(2)} };
+		features.putFeature(nose);
+		features.putFeature(mouth);
+		features.putFeature(mouthM);
+		features.putFeature(mouthB);
+		features.putFeature(chin);
+		return true;
+	}
 }
 
 bool StudentLocalization::stepFindChinContours(const IntensityImage &image, FeatureMap &features) const {

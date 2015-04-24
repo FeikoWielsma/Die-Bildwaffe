@@ -16,5 +16,9 @@ public:
 	bool stepFindNoseEndsAndEyes(const IntensityImage &image, FeatureMap &features) const;
 	bool stepFindExactEyes(const IntensityImage &image, FeatureMap &features) const;
 
+private:
+	const int topOffset = 50;
+	const int sampleWidth = 4;
+
 };
 
