@@ -56,8 +56,8 @@ bool StudentLocalization::stepFindNoseMouthAndChin(const IntensityImage &image, 
 	else{
 		Feature nose{ Feature::FEATURE_NOSE_BOTTOM, Point2D < double > {top.getX(), top.getY() + POI.at(0)} };
 		Feature mouth{ Feature::FEATURE_MOUTH_TOP, Point2D < double > {top.getX(), top.getY() + POI.at(1)} };
-		Feature mouthM{ Feature::FEATURE_MOUTH_CENTER, Point2D < double > {top.getX(), top.getY() + POI.at(1)+4} };
-		Feature mouthB{ Feature::FEATURE_MOUTH_BOTTOM, Point2D < double > {top.getX(), top.getY() + POI.at(1)+8} };
+		Feature mouthM{ Feature::FEATURE_MOUTH_CENTER, Point2D < double > {top.getX(), top.getY() + POI.at(1)+3} };
+		Feature mouthB{ Feature::FEATURE_MOUTH_BOTTOM, Point2D < double > {top.getX(), top.getY() + POI.at(1)+6} };
 		Feature chin{ Feature::FEATURE_CHIN, Point2D < double > {top.getX(), top.getY() + POI.at(2)} };
 		features.putFeature(nose);
 		features.putFeature(mouth);
