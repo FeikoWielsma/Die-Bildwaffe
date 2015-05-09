@@ -29,7 +29,7 @@ IntensityImage * StudentPreProcessing::stepEdgeDetection(const IntensityImage &i
 	IntensityImage * intensityImage = new IntensityImageStudent();
 	StudentEdgeDetection detection;
 	detection.doAlgorithm(image, *intensityImage);
-	return nullptr;
+	return intensityImage;
 }
 
 IntensityImage * StudentPreProcessing::stepThresholding(const IntensityImage &image) const {
