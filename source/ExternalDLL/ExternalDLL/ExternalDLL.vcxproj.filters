@@ -123,6 +123,9 @@
     <ClInclude Include="StudentHistogramCreator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="StudentEdgeDetection.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Image.cpp">
@@ -207,6 +210,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StudentHistogramCreator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StudentEdgeDetection.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

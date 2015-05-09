@@ -3,6 +3,7 @@
 #include "StudentIntensityConvertor.h"
 #include "StudentHistogram.h"
 #include "StudentHistogramCreator.h"
+#include "StudentEdgeDetection.h"
 #include <iostream>
 
 
@@ -24,6 +25,10 @@ IntensityImage * StudentPreProcessing::stepScaleImage(const IntensityImage &imag
 }
 
 IntensityImage * StudentPreProcessing::stepEdgeDetection(const IntensityImage &image) const {
+	std::cout << "edge detection student\n";
+	IntensityImage * intensityImage = new IntensityImageStudent();
+	StudentEdgeDetection detection;
+	detection.doAlgorithm(image, *intensityImage);
 	return nullptr;
 }
 

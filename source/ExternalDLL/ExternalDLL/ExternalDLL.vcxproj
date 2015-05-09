@@ -83,6 +83,7 @@
     <ClInclude Include="Feature.h" />
     <ClInclude Include="FeatureMap.h" />
     <ClInclude Include="GrayscaleAlgorithm.h" />
+    <ClInclude Include="StudentEdgeDetection.h" />
     <ClInclude Include="StudentHistogram.h" />
     <ClInclude Include="StudentHistogramCreator.h" />
     <ClInclude Include="StudentIntensityConvertor.h" />
@@ -116,6 +117,7 @@
     <ClCompile Include="Feature.cpp" />
     <ClCompile Include="FeatureMap.cpp" />
     <ClCompile Include="GrayscaleAlgorithm.cpp" />
+    <ClCompile Include="StudentEdgeDetection.cpp" />
     <ClCompile Include="StudentHistogram.cpp" />
     <ClCompile Include="StudentHistogramCreator.cpp" />
     <ClCompile Include="StudentIntensityConvertor.cpp" />
