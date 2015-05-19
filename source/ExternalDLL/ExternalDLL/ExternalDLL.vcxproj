@@ -107,6 +107,7 @@
     <ClInclude Include="StudentExtraction.h" />
     <ClInclude Include="StudentLocalization.h" />
     <ClInclude Include="StudentPreProcessing.h" />
+    <ClInclude Include="StudentScaling.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DefaultExtraction.cpp" />
@@ -138,6 +139,7 @@
     <ClCompile Include="StudentExtraction.cpp" />
     <ClCompile Include="StudentLocalization.cpp" />
     <ClCompile Include="StudentPreProcessing.cpp" />
+    <ClCompile Include="StudentScaling.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
