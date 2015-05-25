@@ -4,6 +4,7 @@
 #include "StudentHistogram.h"
 #include "StudentHistogramCreator.h"
 #include "StudentEdgeDetection.h"
+#include "StudentScaling.h"
 #include <iostream>
 
 
@@ -16,16 +17,17 @@ IntensityImage * StudentPreProcessing::stepToIntensityImage(const RGBImage &imag
 	StudentHistogramCreator histogramCreator;
 	histogramCreator.doAlgorithm(*intensityImage, histogram);
 	histogram.outputFile();
-	std::cout << "test\n";
 	return intensityImage;
 }
 
 IntensityImage * StudentPreProcessing::stepScaleImage(const IntensityImage &image) const {
-	return nullptr;
+	IntensityImage * intensityImage = new IntensityImageStudent();
+	StudentScaling scaling;
+	scaling.doAlgorithm(image, *intensityImage);
+	return intensityImage;
 }
 
 IntensityImage * StudentPreProcessing::stepEdgeDetection(const IntensityImage &image) const {
-	std::cout << "edge detection student\n";
 	IntensityImage * intensityImage = new IntensityImageStudent();
 	StudentEdgeDetection detection;
 	detection.doAlgorithm(image, *intensityImage);
